@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ritesh Dave – Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Icons (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+@media print {
+    html, body {
+        height: auto;
+        overflow: visible;
+    }
+    * {
+        page-break-inside: avoid;
+    }
+}
+
+
+@page {
+    margin: 0;
+}
+
+* {
+    page-break-before: avoid;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+
+.section {
+    page-break-inside: avoid;
+}
+
+    :root {
+        --navy: #0b1b3b;
+        --gold: #d4a63f;
+        --light-bg: #f5f5f7;
+        --text-main: #222;
+        --text-muted: #555;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #e3e5ea;
+        color: var(--text-main);
+    }
+
+    .page { 
+        max-width: 100%;
+        background: #fff;
+        box-shadow: 0 0 18px rgba(0,0,0,0.18);
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        min-height: 100%;
+    }
+
+    /* LEFT COLUMN */
+    .left-col {
+        background: var(--navy);
+        color: #fff;
+        padding: 30px 25px 40px 25px;
+        position: relative;
+    }
+
+    .left-col::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -8px;
+        width: 8px;
+        height: 100%;
+        background: var(--gold);
+    }
+
+    .left-section-title {
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 25px 0 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+        padding-bottom: 4px;
+    }
+
+    .left-col p {
+        margin: 4px 0;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .left-col ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 6px 0 0;
+    }
+
+    .left-col li {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .skill-item {
+        font-size: 13px;
+    }
+
+    .skill-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+
+    .skill-label span:first-child {
+        font-weight: 600;
+    }
+
+    .skill-bar {
+        display: flex;
+        gap: 2px;
+    }
+
+    .skill-block {
+        flex: 1;
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(255,255,255,0.18);
+    }
+
+    .skill-block.filled {
+        background: var(--gold);
+    }
+
+    /* RIGHT COLUMN */
+    .right-col {
+        padding: 30px 40px 40px 40px;
+        background: #fff;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 18px;
+        margin-bottom: 20px;
+    }
+
+    .name-block h1 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--navy);
+    }
+
+    .name-block p {
+        margin: 4px 0;
+        font-size: 13px;
+        color: var(--text-muted);
+    }
+
+    .contact-line i {
+        color: var(--gold);
+        margin-right: 6px;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 8px;
+        object-fit: cover;
+        border: 3px solid var(--gold);
+    }
+
+    .section-title {
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 18px 0 8px;
+        color: var(--navy);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .section-title i {
+        color: var(--gold);
+    }
+
+    .right-col p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 4px 0;
+    }
+
+    .job {
+        margin-top: 10px;
+        margin-bottom: 14px;
+    }
+
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    .job-title {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--navy);
+    }
+
+    .job-meta {
+        font-size: 13px;
+        color: var(--text-muted);
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .job-role {
+        font-size: 13px;
+        font-style: italic;
+        margin-top: 2px;
+        color: var(--text-muted);
+    }
+	
+	.job-extra {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 2px;
+    }
+
+    .job ul {
+        margin: 6px 0 0 18px;
+        padding: 0;
+        font-size: 13px;
+    }
+
+    .job li {
+        margin-bottom: 4px;
+    }
+
+    .achievements ul {
+        margin: 6px 0 0 18px;
+        padding: 0;
+        font-size: 13px;
+    }
+
+    .achievements li {
+        margin-bottom: 4px;
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+        <!-- SKILLS -->
+        <div>
+            <div class="left-section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Skills</div>
+            <div class="skills-grid">
+
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Solutioning &amp; Architecting</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Microservice &amp; Modernization</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Cloud (AWS-IaaS, PCF-PaaS)</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Backend (Java, Spring Framework, Rest, Soap, Graphql)</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                    </div>
+                </div>
+
+                
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>AWS (EKS, EC2, S3, Lambda, MSK)</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block"></div>
+                    </div>
+                </div> 
+               
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Frontend (React, Angular, etc)</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled" style="opacity:0.6;"></div>
+                        <div class="skill-block"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>DevOps (Terraform) / CI-CD (Github, Jenkins)</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled" style="opacity:0.6;"></div>
+                        <div class="skill-block"></div>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Database (SQL &amp; NoSQL)</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block filled"></div>
+                        <div class="skill-block"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DOMAIN -->
+        <div>
+            <div class="left-section-title"><i class="fa-solid fa-briefcase"></i> Domain</div>
+            <p>Banking and Finance</p>
+			<p>Insurance and Healthcare</p>
+			<p>Internet of Things</p>
+			<p>Media and Entertainment</p>
+            <p>FMCG</p>
+        </div>
+
+        <!-- SOFTWARES -->
+        <div>
+            <div class="left-section-title"><i class="fa-solid fa-laptop-code"></i> Softwares</div>
+            <p>Windows, Linux, Jira, GIT, SVN, Jenkins, Confluence</p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div>
+            <div class="left-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</div>
+            <p>B.E. | 2010 </p>
+            <p>H.S.C. | 2005 </p>
+            <p>S.S.C. | 2003 </p>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div>
+            <div class="left-section-title"><i class="fa-solid fa-language"></i> Languages</div>
+            <p>English</p>
+            <p>Hindi</p>
+            <p>Marathi</p>
+        </div>
+
+        <!-- HOBBIES -->
+        <!-- div>
+            <div class="left-section-title"><i class="fa-solid fa-heart"></i> Hobbies</div>
+            <p>Reading</p>
+            <p>Interacting with people</p>
+            <p>Sports Lover</p>
+        </div -->
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="name-block">
+                <h1>Ritesh Dave</h1>
+                <p class="contact-line"><i class="fa-solid fa-envelope"></i> dave.ritesh1987@gmail.com</p>
+                <p class="contact-line"><i class="fa-solid fa-phone"></i> +1(201)423-####</p>
+                <p class="contact-line"><i class="fa-solid fa-id-card"></i> #######</p>
+                <p class="contact-line"><i class="fa-solid fa-location-dot"></i> Texas, USA</p>
+				<p class="contact-line"><i class="fa-solid fa-linkedin"></i> https://www.linkedin.com/in/rdave87</p>
+            </div>
+            <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+        </div>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <div>
+            <div class="section-title"><i class="fa-solid fa-user-tie"></i> Professional Summary</div>
+            <p>Software Architect with 15+ years of experience designing scalable, cloud‑native, and enterprise‑grade solutions across financial and technology domains.</p>
+			<p>Deep full‑stack engineering expertise spanning Java, Spring Boot, Microservices, and modern UI frameworks.</p>
+			<p>Strong background in AWS architecture, including EKS, EC2, S3, Lambda, MSK, RDS, DynamoDB, and Terraform‑based infrastructure automation.</p>
+			<p>Proven ability to translate complex business requirements into robust architectural blueprints, technical specifications, and end‑to‑end solution designs.</p>
+			<p>Extensive experience building microservices, RESTful APIs, event‑driven systems, and distributed applications with strong focus on performance and reliability.</p>
+			<p>Skilled in defining architecture standards, reusable frameworks, API governance models, and best practices to drive consistency across teams.</p>
+			<p>Hands‑on experience delivering mission‑critical solutions for major financial clients including Chase, Citibank, and Edelweiss.</p>
+			<p>Strong communicator who collaborates effectively with product, engineering, and leadership teams to align technology decisions with business goals.</p>
+			<p>Experienced in CI/CD engineering using Jenkins, GitHub, modular deployments, automated testing, and secure DevOps practices.</p>
+			<p>Adept at leading solution evaluations, technology selection, prototyping, and proof‑of‑concepts to validate design approaches and accelerate delivery.</p>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div>
+            <div class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">LTIMindtree, Texas, USA</div>
+                        <div class="job-role">Solutions Specialist | BFS</div>
+						<div class="job-extra">Client: CITI Bank | Tech stack: Java, Spring Boot, Microservices, AWS (EKS, EC2, S3, Lambda, MSK), Terraform, Jenkins, GitHub</div>
+                    </div>
+                    <div class="job-meta">August 2024 - Present</div>
+                </div>
+                <ul>
+                    <li>Communicate software architecture clearly to stakeholders by describing system structure, characteristics, behavior, and design rationale.</li>
+					<li>Evaluate and identify optimal technical and cloud-based solutions to address complex business problems.</li>
+					<li>Define solution features, delivery phases, and technical requirements while analyzing new business needs, assessing impacts, and supporting prioritization and estimation.</li>
+					<li>Architect reusable API frameworks, shared libraries, and governance standards to ensure consistency and quality across microservices and teams.</li>
+					<li>Select appropriate technology stacks aligned with solution goals, organizational standards, and long‑term scalability.</li>
+					<li>Ensure compliance with non-functional requirements including scalability, performance, usability, reliability, and maintainability.</li>
+					<li>Prepare both High-Level and Low-Level Design documents, technical specifications, and architectural blueprints.</li>
+					<li>Analyze and document business and technical requirements while creating prototypes or proof‑of‑concepts to validate solution approaches.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Virtusa, Texas, USA</div>
+                        <div class="job-role">Solutions Architect | BFS</div>
+                    </div>
+                    <div class="job-meta">November 2022 – August 2024</div>
+                </div>
+                <ul>
+					<li>Modernizing and Migrating Applications from PCF to AWS Cloud using Terraform for JPMC Client.</li>
+                    <li>Describing the structure, characteristics, behavior, and other aspects of software to project stakeholders.</li>
+					<li>Building and finding the best technical/cloud solution among all possible options to solve existing business problems.</li>
+					<li>Defining features, phases, and solution requirements; analyzing new business requirements, business impacts, work prioritization, and estimation.</li>
+					<li>Working on solutioning common API frameworks and libraries that can be leveraged across microservices and the organization; setting up API governance, coding standards, and quality processes.</li>
+					<li>Selecting the appropriate technology stack for implementing the solution.</li>
+					<li>Ensuring compliance with non-functional requirements such as scalability, usability, and reliability.</li>
+					<li>Preparing Low-Level and High-Level design documents or technical specifications.</li>
+					<li>Analyzing and documenting requirements while creating solution prototypes.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Virtusa, Mumbai, IND</div>
+                        <div class="job-role">Lead Engineer | BFS</div>
+                    </div>
+                    <div class="job-meta">December 2018 – November 2022</div>
+                </div>
+                <ul>
+                    <li>Describing the structure, characteristics, behavior, and other aspects of software to project stakeholders.</li>
+					<li>Building and finding the best technical/cloud solution among all possible options to solve existing business problems.</li>
+					<li>Defining features, phases, and solution requirements; analyzing new business requirements, business impacts, work prioritization, and estimation.</li>
+					<li>Working on solutioning common API frameworks and libraries that can be leveraged across microservices and the organization; setting up API governance, coding standards, and quality processes.</li>
+					<li>Selecting the appropriate technology stack for implementing the solution.</li>
+					<li>Ensuring compliance with non-functional requirements such as scalability, usability, and reliability.</li>
+					<li>Preparing Low-Level and High-Level design documents or technical specifications.</li>
+					<li>Analyzing and documenting requirements while creating solution prototypes.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">CIGNEX Datamatics, Mumbai, IND</div>
+                        <div class="job-role">Team Lead | Finance Domain</div>
+                    </div>
+                    <div class="job-meta">October 2017 - November 2018</div>
+                </div>
+                <ul>
+                    <li>Analyzing and documenting requirements, business impacts, work prioritization, and estimation.</li>
+					<li>Defining features, phases, and selecting the best technical/cloud solutions among all possible options to solve business problems.</li>
+					<li>Analyzing the technology environment, defining MVPs, and delivering solution architecture or prototypes.</li>
+					<li>Preparing design documents, technical specifications, and setting up API governance, coding standards, and quality processes.</li>
+					<li>Implementing new components or change requests and developing applications using Java and the Spring Framework.</li>
+					<li>Conveying crisp and concise status updates of work in progress to stakeholders.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">L&amp;T infotech, Mumbai, IND</div>
+                        <div class="job-role">Senior Software Engineer | IOT, Media &amp; Entertainment</div>
+                    </div>
+                    <div class="job-meta">September 2015 - October 2017</div>
+                </div>
+                <ul>
+                    <li>Interacting with the client for requirement gathering and designing new components and their architecture.</li>
+					<li>Implementing new or changed requirements and developing applications using Java and the Spring Framework.</li>
+					<li>Creating prototype applications for different lines of business.</li>
+					<li>Keeping technical and training documents synchronized with the current codebase and application functionalities.</li>
+					<li>Conveying crisp and concise status updates of work in progress to stakeholders.</li>
+                </ul>
+            </div>
+			
+			<div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Rolta India Public Ltd, Mumbai, IND</div>
+                        <div class="job-role">Software Engineer | Defence</div>
+                    </div>
+                    <div class="job-meta">September 2014 - September 2015</div>
+                </div>
+                <ul>
+                    <li>Interacting with the client for requirement gathering and designing new components and their architecture.</li>
+					<li>Implementing new/change requests and developing applications using Java and Spring Framework.</li>
+					<li>Creating prototype applications for different lines of business.</li>
+					<li>Keeping the technical and training documents in synchronization with the current code and functionalities of the application.</li>
+					<li>Conveying crisp and laconic status of the work in progress to the stakeholders.</li>
+					<li>Writing and maintaining documentation of relevant operating procedures and processes.</li>
+					<li>Hands-on coding using Java, JSP, Servlets, Spring, and Hibernate.</li>
+                </ul>
+            </div>
+			
+			<div class="job">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Atos India Pvt Ltd, Mumbai, IND</div>
+                        <div class="job-role">Software Engineer | FMCG, Media &amp; Entertainment</div>
+                    </div>
+                    <div class="job-meta">December 2010 - August 2014</div>
+                </div>
+                <ul>
+                    <li>Interacting with the client for requirement gathering and designing new components and their architecture.</li>
+					<li>Implementing new or changed requirements and developing applications using Java and the Spring Framework.</li>
+					<li>Creating prototype applications for different lines of business.</li>
+					<li>Keeping technical and training documents synchronized with the current codebase and application functionalities.</li>
+					<li>Conveying crisp and concise status updates of work in progress to stakeholders.</li>
+                </ul>
+            </div>
+			
+        </div>
+
+        <!-- ACHIEVEMENTS -->
+        <div class="achievements">
+            <div class="section-title"><i class="fa-solid fa-trophy"></i> Achievements &amp; Certifications</div>
+            <ul>
+                <li>AWS Certified Solutions Architect - Associate, Validation Number Y3R59WGLBFB1Q7K0</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
